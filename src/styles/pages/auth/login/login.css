@@ -6,7 +6,18 @@
 
 /* ─── Layout: remove parent padding so image sits flush ─── */
 .login-page {
-  /* Override the PublicLayout main padding */
+  margin: -8px;
+  /* Offsets the 8px padding from PublicLayout */
+  width: calc(100% + 16px) !important;
+  height: calc(100% + 16px) !important;
+  min-height: calc(100vh - 66px) !important;
+  display: flex !important;
+}
+
+@media (max-width: 767px) {
+  .login-page {
+    flex-direction: column !important;
+  }
 }
 
 /* ─── Header tweaks (scoped via body.login-active) ─── */
