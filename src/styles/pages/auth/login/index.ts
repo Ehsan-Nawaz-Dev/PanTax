@@ -67,6 +67,7 @@ export const submitButtonWrapperSx: SxProps<Theme> = {
 // ─── Page Layout ────────────────────────────────────────────────────────────
 
 export const loginMainSx: SxProps<Theme> = (theme) => ({
+  overflow: "hidden",
   display: "flex",
   flexDirection: "column",
   minHeight: PANEL_HEIGHT,
@@ -107,7 +108,7 @@ export const formPanelSx: SxProps<Theme> = (theme) => ({
   justifyContent: "center",
   alignItems: "center",
   backgroundColor: "#f5f5f5",
-  overflowY: "auto",
+  overflowY: "hidden",
   p: { xs: 3, sm: 5 },
   [theme.breakpoints.up("md")]: {
     width: "52%",
