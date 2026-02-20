@@ -1,0 +1,44 @@
+# queries
+
+query FetchUser {
+  fetchUser {
+    response {
+      status
+      message
+    }
+
+    user {
+      id
+      firstName
+
+      userRoles {
+        role {
+          name
+          type
+        }
+      }
+    }
+  }
+}
+
+# mutations
+
+mutation Login($loginInput: LoginInput!) {
+  login(loginInput: $loginInput) {
+    token
+
+    response {
+      status
+      message
+    }
+  }
+}
+
+mutation ChangePassword($changePasswordInput: ChangePasswordInput!) {
+  changePassword(changePasswordInput: $changePasswordInput) {
+    response {
+      status
+      message
+    }
+  }
+}

@@ -1,0 +1,48 @@
+---
+description: Core conventions and patterns for the Snap Tax admin React app
+alwaysApply: true
+---
+
+# Snap Tax Admin – Core Rules
+
+## General
+
+- Prefer **TypeScript-first** patterns (typed props, contexts, hooks, and form values).
+- Use **absolute imports via Vite path aliases** (e.g. `@contexts/Auth`, `@components/...`, `@constants/...`) instead of long relative import chains.
+- Keep modules **focused and small**; extract helpers into `lib`, constants into `constants`, types into `interfaces`, and reusable UI into `components`.
+- Keep **authentication logic** in the `Auth` context and helpers in `lib/helper`, not sprinkled across pages.
+
+## React & Routing
+
+- Use **functional components with `FC` and explicit JSX return types** where appropriate (`FC<ChildrenType>`, `FC<Props>`, etc.).
+- Prefer **composition over layout duplication** – wrap protected content in `PrivateRoute` (and `MainLayout` once enabled) instead of doing auth checks in each page.
+- All routing should go through the central routes setup in `routes` (`AppRoutes`, `PublicRoute`, `PrivateRoute`, and `routes.tsx`). Avoid ad‑hoc `<BrowserRouter>` or `<Navigate>` usage outside these utilities.
+- For redirects, prefer `react-router` primitives (`Navigate`, `useLocation`, route config) instead of using `window.location` directly, except for hard reload use cases.
+
+## Auth & Token Handling
+
+- Use the **Auth context** (`AuthContextProvider` + `useAuthContext`) as the **single source of truth** for login state (`isLoggedIn`, `isLoaded`, `isLoading`).
+- Use `lib/helper` token helpers (`getToken`, `setToken`, `clearToken`, `handleLogout`) for all token interactions; do **not** access `localStorage` directly in pages/components.
+- When adding or changing login flows:
+  - On successful login, call `setToken` and inform the auth context (e.g. `setIsLoggedIn(true)`).
+  - On logout, call `handleLogout` and ensure auth context state is reset appropriately.
+- Keep async user bootstrap logic inside the Auth context (e.g. `getUser`/`fetchUser` in `AuthContextProvider`) rather than in individual routes/components.
+
+## Forms & Validation
+
+- Use **`react-hook-form`** with `FormProvider` in forms and colocate the form implementation with its page under `pages/...`.
+- Use our shared **MUI `InputController`** (from `components/controllers`) as the default field component for text-like inputs.
+- Prefer **Yup schemas** in `validations` and reuse the existing helper messages in `lib/helper` (`requiredMessage`, `invalidMessage`, etc.) to keep error text consistent.
+- Centralize form initial values in `constants/formInitials` and types in `interfaces/formTypes`; avoid inline literal default objects and duplicated types in components.
+
+## Theming & Design System
+
+- Always wrap the app in the **MUI theme** (`customTheme` from `theme/index`) and extend theme values (palette, typography, components, breakpoints) via the existing theme modules, not inline.
+- When introducing new colors, typography variants, or component overrides, first add them to the theme (`palette.ts`, `typography.ts`, `components.ts`, or `styleConstants.ts`) and then consume via the theme rather than hard‑coded values.
+- Reuse **shared constants** such as fonts, routes, and regexes from `constants/*` instead of redefining strings or patterns in components.
+
+## Project Hygiene
+
+- Keep **auth-related business logic** out of UI-only components; UI components should accept props and delegate auth decisions to the context or route layer.
+- Avoid commented‑out production code; if a pattern is no longer needed (e.g. older layout code in `PrivateRoute`), prefer deleting it over leaving long commented sections.
+- When adding new files, follow the existing folder structure (`pages`, `routes`, `contexts`, `interfaces`, `constants`, `components`, `theme`, `validations`, `lib`) and name things consistently with current conventions.
