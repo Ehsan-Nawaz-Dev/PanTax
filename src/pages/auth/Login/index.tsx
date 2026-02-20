@@ -40,7 +40,7 @@ const Login: FC = () => {
         <Box sx={formPanelSx}>
           <Box sx={formContentSx}>
             <Typography variant="caption" sx={welcomeCaptionSx}>
-              Welcome
+              WELCOME
             </Typography>
             <Typography variant="h1" sx={titleSx}>
               Log In
@@ -63,7 +63,10 @@ const Login: FC = () => {
                 Forgot Password?
               </Typography>
               <Box sx={signUpTextWrapperSx}>
-                <Typography variant="body2" color="text.secondary">
+                <Typography
+                  variant="body2"
+                  sx={{ color: "#555", fontSize: "0.875rem", fontWeight: 400 }}
+                >
                   Don&apos;t have an account?
                 </Typography>
                 <Typography

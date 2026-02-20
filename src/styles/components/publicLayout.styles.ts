@@ -12,7 +12,7 @@ export const mainSx: SxProps<Theme> = {
   minHeight: 0,
   width: "100%",
   boxSizing: "border-box",
-  padding: "8px",
+  padding: 0,
   display: "flex",
   flexDirection: "column",
   overflow: "hidden",

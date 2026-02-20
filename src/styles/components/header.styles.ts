@@ -10,6 +10,7 @@ export const appBarSx: SxProps<Theme> = {
   backgroundColor: "#FFFFFF",
   color: "primary.main",
   padding: 0,
+  borderBottom: "1px solid #f0f0f0",
 };
 
 export const toolbarSx: SxProps<Theme> = {
@@ -21,8 +22,8 @@ export const toolbarSx: SxProps<Theme> = {
   alignItems: "center",
   justifyContent: "space-between",
   width: "100%",
-  paddingLeft: "16px",
-  paddingRight: "16px",
+  paddingLeft: "24px",
+  paddingRight: "24px",
   paddingTop: 0,
   paddingBottom: 0,
   boxSizing: "border-box",
@@ -42,11 +43,12 @@ export const navSx: SxProps<Theme> = {
 };
 
 export const navLinkSx: SxProps<Theme> = {
-  color: "primary.main",
+  color: "#333",
   fontWeight: 500,
+  fontSize: "0.9rem",
   textDecoration: "none",
   px: { md: 1, lg: 1.5 },
-  "&:hover": { color: "secondary.main" },
+  "&:hover": { color: "#E8A317" },
 };
 
 export const navCenterSx: SxProps<Theme> = {
@@ -66,14 +68,18 @@ export const actionsSx: SxProps<Theme> = {
 
 export const signUpButtonSx: SxProps<Theme> = {
   display: { xs: "none", sm: "inline-flex" },
-  width: 145,
-  minHeight: 55,
-  border: "1px solid #142828",
+  width: 130,
+  minHeight: 44,
+  border: "1.5px solid #142828",
+  borderRadius: "4px",
   borderColor: "#142828",
   color: "#142828",
+  fontWeight: 600,
+  fontSize: "0.875rem",
+  textTransform: "none",
   "&:hover": {
     borderColor: "#142828",
-    backgroundColor: "action.hover",
+    backgroundColor: "rgba(20, 40, 40, 0.04)",
   },
 };
 

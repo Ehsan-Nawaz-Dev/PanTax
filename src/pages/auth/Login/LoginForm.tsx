@@ -71,6 +71,7 @@ const LoginForm: FC = (): JSX.Element => {
             variant="contained"
             color="primary"
             type="submit"
+            disableElevation
             sx={loginButtonSx}
           >
             Log In
