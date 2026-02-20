@@ -29,7 +29,7 @@ const RegisterForm: FC = (): JSX.Element => {
 
   const { handleSubmit } = methods;
 
-  const onSubmit: SubmitHandler<RegisterFormType> = (data) => {
+  const onSubmit: SubmitHandler<RegisterFormType> = (_data) => {
     setToken("1234567890");
     setIsLoggedIn(true);
   };
@@ -48,7 +48,7 @@ const RegisterForm: FC = (): JSX.Element => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container spacing={2.5}>
             {/* Row 1 - First Name & Last Name */}
-            <Grid item xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <InputController
                 isRequired
                 name="firstName"
@@ -57,7 +57,7 @@ const RegisterForm: FC = (): JSX.Element => {
                 inputSx={formFieldInputSx}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <InputController
                 isRequired
                 name="lastName"
@@ -68,7 +68,7 @@ const RegisterForm: FC = (): JSX.Element => {
             </Grid>
 
             {/* Row 2 - Email only */}
-            <Grid item xs={12}>
+            <Grid size={{ xs: 12 }}>
               <InputController
                 isRequired
                 name="email"
@@ -80,7 +80,7 @@ const RegisterForm: FC = (): JSX.Element => {
             </Grid>
 
             {/* Row 3 - Company Name & EFIN */}
-            <Grid item xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <InputController
                 isRequired
                 name="companyName"
@@ -89,7 +89,7 @@ const RegisterForm: FC = (): JSX.Element => {
                 inputSx={formFieldInputSx}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid size={{ xs: 12, sm: 6 }}>
               <InputController
                 isRequired
                 name="efin"

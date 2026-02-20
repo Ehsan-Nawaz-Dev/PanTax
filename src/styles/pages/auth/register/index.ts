@@ -1,6 +1,6 @@
 import type { SxProps, Theme } from "@mui/material/styles";
 
-export const mainSx: SxProps<Theme> = {
+export const registerMainSx: SxProps<Theme> = {
   minHeight: "100vh",
   display: "flex",
   alignItems: "center",
@@ -47,16 +47,16 @@ export const formFieldInputSx: SxProps<Theme> = {
   backgroundColor: "#ffffff",
   borderRadius: "4px",
   mt: 1, // Label aur input k darmiyan gap k liye
-  "& .MuiOutlinedInput-notchedOutline": { 
-    borderColor: "#e0e0e0", 
+  "& .MuiOutlinedInput-notchedOutline": {
+    borderColor: "#e0e0e0",
   },
   "& .MuiInputBase-input": {
     padding: "14px 16px", // Thora padding barha diya figma k mutabiq
     fontSize: "14px",
   },
-  "&.Mui-focused .MuiOutlinedInput-notchedOutline": { 
+  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
     borderColor: "#1a2e2c",
-    borderWidth: "1.5px" 
+    borderWidth: "1.5px"
   },
 };
 

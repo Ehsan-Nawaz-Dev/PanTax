@@ -5,7 +5,7 @@ import PublicLayout from "@components/PublicLayout";
 import RegisterForm from "./RegisterForm";
 import { APP_ROUTES } from "@constants/index";
 import {
-  mainSx,
+  registerMainSx,
   formPanelSx,
   dividerSx,
   signUpLinkSx,
@@ -16,7 +16,7 @@ import {
 const Register: FC = () => {
   return (
     <PublicLayout>
-      <Box component="main" sx={mainSx}>
+      <Box component="main" sx={registerMainSx}>
         {/* Removed Container sm to allow figma width */}
         <Box sx={formPanelSx}>
           <RegisterForm />

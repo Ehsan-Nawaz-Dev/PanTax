@@ -44,7 +44,7 @@ export const submitButtonWrapperSx: SxProps<Theme> = {
 
 // ─── Page Layout ────────────────────────────────────────────────────────────
 
-export const mainSx: SxProps<Theme> = (theme) => ({
+export const loginMainSx: SxProps<Theme> = (theme) => ({
   display: "flex",
   flexDirection: "column",
   minHeight: PANEL_HEIGHT,

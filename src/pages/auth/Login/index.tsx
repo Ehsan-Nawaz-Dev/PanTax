@@ -9,7 +9,7 @@ import loginImage from "@assets/images/login.png";
 import { APP_ROUTES } from "@constants/index";
 // styles
 import {
-  mainSx,
+  loginMainSx,
   imageWrapperSx,
   imageSx,
   formPanelSx,
@@ -27,7 +27,7 @@ import {
 const Login: FC = () => {
   return (
     <PublicLayout>
-      <Box component="main" sx={mainSx}>
+      <Box component="main" sx={loginMainSx}>
         <Box sx={imageWrapperSx}>
           <Box
             component="img"
