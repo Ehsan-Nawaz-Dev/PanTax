@@ -14,8 +14,6 @@ import { useAuthContext } from "@contexts/Auth/hook";
 import { setToken } from "@lib/helper";
 // styles
 import {
-  formFieldInputSx,
-  loginButtonSx,
   fieldsWrapperSx,
   submitButtonWrapperSx,
 } from "@styles/pages/auth/login";
@@ -46,7 +44,6 @@ const LoginForm: FC = (): JSX.Element => {
             title={EFIN}
             fieldType="number"
             placeholder="Enter EFIN"
-            inputSx={formFieldInputSx}
           />
           <InputController
             isRequired
@@ -54,7 +51,6 @@ const LoginForm: FC = (): JSX.Element => {
             title={EMAIL}
             fieldType="email"
             placeholder="Enter Email"
-            inputSx={formFieldInputSx}
           />
           <InputController
             isRequired
@@ -63,7 +59,6 @@ const LoginForm: FC = (): JSX.Element => {
             title={PASSWORD}
             fieldType="password"
             placeholder="Enter Password"
-            inputSx={formFieldInputSx}
           />
         </Box>
         <Box sx={submitButtonWrapperSx}>
@@ -72,7 +67,7 @@ const LoginForm: FC = (): JSX.Element => {
             color="primary"
             type="submit"
             disableElevation
-            sx={loginButtonSx}
+            className="login-submit-btn"
           >
             Log In
           </Button>

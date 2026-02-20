@@ -1,0 +1,165 @@
+/* ============================================================
+   Login Page – Scoped Overrides
+   All login-specific visual tweaks live here.
+   Wrap the Login page root in className="login-page"
+   ============================================================ */
+
+/* ─── Layout: remove parent padding so image sits flush ─── */
+.login-page {
+  /* Override the PublicLayout main padding */
+}
+
+/* ─── Header tweaks (scoped via body.login-active) ─── */
+body.login-active .MuiAppBar-root {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+body.login-active .MuiToolbar-root {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Nav link styling */
+body.login-active .MuiAppBar-root nav a,
+body.login-active .MuiAppBar-root nav p {
+  color: #333;
+  font-size: 0.9rem;
+}
+
+body.login-active .MuiAppBar-root nav a:hover,
+body.login-active .MuiAppBar-root nav p:hover {
+  color: #E8A317;
+}
+
+/* Sign Up button */
+body.login-active .MuiAppBar-root .MuiButton-outlined {
+  width: 130px;
+  min-height: 44px;
+  border: 1.5px solid #142828;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: none;
+}
+
+/* ─── Form Panel ─── */
+.login-page .login-form-panel {
+  background-color: #f5f5f5;
+  overflow: hidden;
+}
+
+/* ─── Form Labels – bold black ─── */
+.login-page .MuiFormLabel-root {
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  color: #1a1a1a !important;
+  margin-bottom: 6px;
+}
+
+.login-page .MuiFormLabel-root.Mui-focused {
+  color: #1a1a1a !important;
+}
+
+/* ─── Input Fields ─── */
+.login-page .MuiOutlinedInput-root {
+  height: 50px;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 0.875rem;
+}
+
+.login-page .MuiOutlinedInput-notchedOutline {
+  border-color: #e0e0e0;
+}
+
+.login-page .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: #bbb;
+}
+
+.login-page .MuiInputBase-input::placeholder {
+  color: #aaa;
+  opacity: 1;
+  font-size: 0.875rem;
+}
+
+/* ─── Login Button ─── */
+.login-page .login-submit-btn {
+  width: 220px;
+  height: 50px;
+  text-transform: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 4px;
+  box-shadow: none;
+  background-color: #1B3A2D;
+  color: #fff;
+}
+
+.login-page .login-submit-btn:hover {
+  background-color: #142d23;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ─── Welcome Caption ─── */
+.login-page .login-welcome-caption {
+  color: #E8A317;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* ─── Title ─── */
+.login-page .login-title {
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.15;
+  margin-bottom: 6px;
+}
+
+/* ─── Subtitle ─── */
+.login-page .login-subtitle {
+  color: #777;
+  font-size: 0.875rem;
+  font-weight: 400;
+  margin-bottom: 32px;
+}
+
+/* ─── Divider ─── */
+.login-page .login-divider {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-color: #e0e0e0;
+}
+
+/* ─── Bottom Links ─── */
+.login-page .login-forgot-link {
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.login-page .login-forgot-link:hover {
+  text-decoration: underline;
+  color: #111;
+}
+
+.login-page .login-signup-link {
+  color: #E8A317;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.login-page .login-signup-link:hover {
+  text-decoration: underline;
+}
+
+.login-page .login-account-text {
+  color: #555;
+  font-size: 0.875rem;
+  font-weight: 400;
+}

@@ -43,18 +43,7 @@ const InputController: FC<InputControllerProps> = ({
         const { message } = error || {};
         return (
           <FormControl fullWidth error={Boolean(error)} variant="outlined">
-            <FormLabel
-              htmlFor={name}
-              sx={{
-                fontWeight: 700,
-                fontSize: "0.875rem",
-                color: "#1a1a1a",
-                mb: 0.75,
-                "&.Mui-focused": {
-                  color: "#1a1a1a",
-                },
-              }}
-            >
+            <FormLabel htmlFor={name}>
               {isRequired ? `${title} *` : title}
             </FormLabel>
             <OutlinedInput

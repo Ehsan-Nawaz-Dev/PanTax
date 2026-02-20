@@ -2,53 +2,13 @@ import type { SxProps, Theme } from "@mui/material/styles";
 
 export const PANEL_HEIGHT = "calc(100vh - 66px)";
 
-// ─── Form Field Styles ──────────────────────────────────────────────────────
+// ─── Form Field Styles (layout only, visual overrides in login.css) ─────────
 
 export const formFieldInputSx: SxProps<Theme> = {
   width: "100%",
-  "& .MuiInputBase-root": {
-    height: 50,
-    borderRadius: "4px",
-    backgroundColor: "#fff",
-    fontSize: "0.875rem",
-    fontWeight: 400,
-    color: "#333",
-  },
-  "& .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#e0e0e0",
-  },
-  "&:hover .MuiOutlinedInput-notchedOutline": {
-    borderColor: "#bbb",
-  },
-  "& .MuiInputBase-input::placeholder": {
-    color: "#aaa",
-    opacity: 1,
-    fontSize: "0.875rem",
-  },
 };
 
-export const formLabelSx: SxProps<Theme> = {
-  fontWeight: 700,
-  fontSize: "0.875rem",
-  color: "#1a1a1a",
-  mb: 0.75,
-};
-
-export const loginButtonSx: SxProps<Theme> = {
-  width: 220,
-  height: 50,
-  textTransform: "none",
-  fontSize: "0.95rem",
-  fontWeight: 600,
-  borderRadius: "4px",
-  boxShadow: "none",
-  backgroundColor: "#1B3A2D",
-  color: "#fff",
-  "&:hover": {
-    backgroundColor: "#142d23",
-    boxShadow: "0px 4px 12px rgba(0,0,0,0.15)",
-  },
-};
+export const loginButtonSx: SxProps<Theme> = {};
 
 export const fieldsWrapperSx: SxProps<Theme> = {
   display: "flex",
@@ -67,15 +27,14 @@ export const submitButtonWrapperSx: SxProps<Theme> = {
 // ─── Page Layout ────────────────────────────────────────────────────────────
 
 export const loginMainSx: SxProps<Theme> = (theme) => ({
-  overflow: "hidden",
   display: "flex",
   flexDirection: "column",
   minHeight: PANEL_HEIGHT,
   width: "100%",
+  overflow: "hidden",
   [theme.breakpoints.up("md")]: {
     flexDirection: "row",
     height: PANEL_HEIGHT,
-    overflow: "hidden",
   },
 });
 
@@ -107,8 +66,6 @@ export const formPanelSx: SxProps<Theme> = (theme) => ({
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "#f5f5f5",
-  overflowY: "hidden",
   p: { xs: 3, sm: 5 },
   [theme.breakpoints.up("md")]: {
     width: "52%",
@@ -124,68 +81,4 @@ export const formPanelSx: SxProps<Theme> = (theme) => ({
 export const formContentSx: SxProps<Theme> = {
   width: "100%",
   maxWidth: { xs: "100%", sm: 440 },
-};
-
-// ─── Typography ─────────────────────────────────────────────────────────────
-
-export const welcomeCaptionSx: SxProps<Theme> = {
-  color: "#E8A317",
-  fontWeight: 700,
-  fontSize: "0.75rem",
-  letterSpacing: "0.15em",
-  textTransform: "uppercase",
-  display: "block",
-  mb: 1,
-};
-
-export const titleSx: SxProps<Theme> = {
-  fontSize: { xs: "2rem", md: "2.5rem" },
-  fontWeight: 700,
-  color: "#1a1a1a",
-  lineHeight: 1.15,
-  mb: 0.75,
-};
-
-export const subtitleSx: SxProps<Theme> = {
-  color: "#777",
-  fontSize: "0.875rem",
-  fontWeight: 400,
-  mb: 4,
-};
-
-// ─── Bottom Links ────────────────────────────────────────────────────────────
-
-export const dividerSx: SxProps<Theme> = {
-  my: 3,
-  borderColor: "#e0e0e0",
-};
-
-export const linksWrapperSx: SxProps<Theme> = {
-  display: "flex",
-  flexDirection: { xs: "column", sm: "row" },
-  justifyContent: "space-between",
-  alignItems: { xs: "flex-start", sm: "center" },
-  gap: 1.5,
-};
-
-export const forgotPasswordLinkSx: SxProps<Theme> = {
-  color: "#333",
-  fontSize: "0.875rem",
-  fontWeight: 500,
-  textDecoration: "none",
-  "&:hover": { textDecoration: "underline", color: "#111" },
-};
-
-export const signUpLinkSx: SxProps<Theme> = {
-  color: "#E8A317",
-  fontWeight: 700,
-  fontSize: "0.875rem",
-  textDecoration: "none",
-  ml: 0.5,
-  "&:hover": { textDecoration: "underline" },
-};
-
-export const signUpTextWrapperSx: SxProps<Theme> = {
-  display: "flex",
-  alignItems: "center",
 };

@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router";
 import { Box, Divider, Typography } from "@mui/material";
 // components
@@ -14,20 +15,22 @@ import {
   imageSx,
   formPanelSx,
   formContentSx,
-  welcomeCaptionSx,
-  titleSx,
-  subtitleSx,
-  dividerSx,
-  linksWrapperSx,
-  forgotPasswordLinkSx,
-  signUpLinkSx,
-  signUpTextWrapperSx,
 } from "@styles/pages/auth/login";
+// CSS overrides for login page
+import "@styles/pages/auth/login/login.css";
 
 const Login: FC = () => {
+  // Add body class for header scoping
+  useEffect(() => {
+    document.body.classList.add("login-active");
+    return () => {
+      document.body.classList.remove("login-active");
+    };
+  }, []);
+
   return (
     <PublicLayout>
-      <Box component="main" sx={loginMainSx}>
+      <Box component="main" sx={loginMainSx} className="login-page">
         <Box sx={imageWrapperSx}>
           <Box
             component="img"
@@ -37,43 +40,48 @@ const Login: FC = () => {
           />
         </Box>
 
-        <Box sx={formPanelSx}>
+        <Box sx={formPanelSx} className="login-form-panel">
           <Box sx={formContentSx}>
-            <Typography variant="caption" sx={welcomeCaptionSx}>
+            <Typography variant="caption" className="login-welcome-caption">
               WELCOME
             </Typography>
-            <Typography variant="h1" sx={titleSx}>
+            <Typography variant="h1" className="login-title">
               Log In
             </Typography>
-            <Typography variant="body1" sx={subtitleSx}>
+            <Typography variant="body1" className="login-subtitle">
               Sign in using your registered account
             </Typography>
 
             <LoginForm />
 
-            <Divider sx={dividerSx} />
+            <Divider className="login-divider" />
 
-            <Box sx={linksWrapperSx}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                flexWrap: "wrap",
+                gap: 1.5,
+              }}
+            >
               <Typography
                 component={Link}
                 to={APP_ROUTES.FORGOT_PASSWORD}
                 variant="body2"
-                sx={forgotPasswordLinkSx}
+                className="login-forgot-link"
               >
                 Forgot Password?
               </Typography>
-              <Box sx={signUpTextWrapperSx}>
-                <Typography
-                  variant="body2"
-                  sx={{ color: "#555", fontSize: "0.875rem", fontWeight: 400 }}
-                >
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Typography variant="body2" className="login-account-text">
                   Don&apos;t have an account?
                 </Typography>
                 <Typography
                   component={Link}
                   to={APP_ROUTES.REGISTER}
                   variant="body2"
-                  sx={signUpLinkSx}
+                  className="login-signup-link"
                 >
                   Sign Up
                 </Typography>
