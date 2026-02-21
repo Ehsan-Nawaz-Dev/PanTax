@@ -1,42 +1,36 @@
 import type { FC } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Box, Divider, Typography } from "@mui/material";
 import PublicLayout from "@components/PublicLayout";
 import RegisterForm from "./RegisterForm";
 import { APP_ROUTES } from "@constants/index";
-import {
-  registerMainSx,
-  formPanelSx,
-  dividerSx,
-  signUpLinkSx,
-  signUpTextWrapperSx,
-  bottomLinkWrapperSx
-} from "@styles/pages/auth/register"; // Make sure path is correct
+import "@styles/pages/auth/register/register.css";
 
 const Register: FC = () => {
+  useEffect(() => {
+    // Apply body class for fixed header layout tracking
+    document.body.classList.add("register-active");
+    return () => {
+      document.body.classList.remove("register-active");
+    };
+  }, []);
+
   return (
     <PublicLayout>
-      <Box component="main" sx={registerMainSx}>
-        {/* Removed Container sm to allow figma width */}
-        <Box sx={formPanelSx}>
+      <Box className="register-page">
+        <Box className="register-form-panel">
           <RegisterForm />
 
-          <Divider sx={dividerSx} />
+          <Divider className="register-divider" />
 
-          <Box sx={bottomLinkWrapperSx}>
-            <Box sx={signUpTextWrapperSx}>
-              <Typography variant="body2" sx={{ color: "#333", fontSize: "14px" }}>
-                Already have an account?
-              </Typography>
-              <Typography
-                component={Link}
-                to={APP_ROUTES.LOGIN}
-                variant="body2"
-                sx={signUpLinkSx}
-              >
-                Log In
-              </Typography>
-            </Box>
+          <Box className="register-bottom-bar">
+            <Typography className="register-account-text">
+              Already have an account?
+            </Typography>
+            <Link to={APP_ROUTES.LOGIN} className="register-login-link">
+              Log In
+            </Link>
           </Box>
         </Box>
       </Box>

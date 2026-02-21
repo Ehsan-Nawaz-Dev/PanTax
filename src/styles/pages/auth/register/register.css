@@ -1,0 +1,271 @@
+/* ============================================================
+   Register Page – Carbon Copy Exact Dimensions
+   ============================================================ */
+
+/* ─── Global Layout Fixes ─── */
+body.register-active {
+    margin: 0;
+    padding: 0;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ─── Header ─── */
+body.register-active .MuiAppBar-root {
+    width: 1472px !important;
+    height: 66px !important;
+    min-height: 66px !important;
+    background: #FFFFFF !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+    margin-top: 20px;
+    position: relative !important;
+}
+
+body.register-active .MuiToolbar-root {
+    width: 1472px !important;
+    height: 66px !important;
+    min-height: 66px !important;
+    padding: 0 !important;
+    position: relative !important;
+}
+
+/* Nav List */
+body.register-active .MuiToolbar-root nav {
+    position: absolute !important;
+    width: 857.51px !important;
+    height: 60px !important;
+    top: 3px !important;
+    left: 307.25px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.register-active .MuiToolbar-root nav a,
+body.register-active .MuiToolbar-root nav p {
+    color: #4A4A4A !important;
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    margin: 0 16px !important;
+    font-family: 'Sora', sans-serif !important;
+    text-decoration: none !important;
+}
+
+body.register-active .MuiToolbar-root nav a:hover,
+body.register-active .MuiToolbar-root nav p:hover {
+    color: #142828 !important;
+}
+
+/* Log In button in header */
+body.register-active .MuiAppBar-root .MuiButton-outlined {
+    position: absolute !important;
+    width: 145.15px !important;
+    height: 66px !important;
+    min-height: 66px !important;
+    left: 1296.86px !important;
+    top: 0 !important;
+    border: 1px solid #142828 !important;
+    border-radius: 2px !important;
+    color: #142828 !important;
+    font-weight: 500 !important;
+    font-size: 15px !important;
+    text-transform: none !important;
+    font-family: 'Sora', sans-serif !important;
+}
+
+/* ─── Main Content Container ─── */
+.register-page {
+    padding: 0 !important;
+    margin: 40px auto 0 auto !important;
+    /* Spacing below header */
+    width: 1472px !important;
+    display: flex !important;
+    justify-content: center !important;
+    font-family: 'Sora', sans-serif;
+}
+
+/* ─── Form Container ─── */
+.register-form-panel {
+    width: 726px !important;
+    background-color: #F4F5F5;
+    /* Exact light gray */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 50px 30px;
+    /* 30px horizontal gives 666 inner for inputs */
+    position: relative !important;
+}
+
+/* ─── Typography ─── */
+.register-welcome-caption {
+    color: #FFA710 !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    letter-spacing: 1px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 8px !important;
+}
+
+.register-title {
+    color: #1A2828 !important;
+    font-size: 44px !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+    line-height: 1.2 !important;
+}
+
+.register-subtitle {
+    color: #666666 !important;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    margin-bottom: 32px !important;
+}
+
+/* ─── Form Elements ─── */
+.register-fields-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    width: 100%;
+}
+
+.register-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    /* spacing between two columns */
+    width: 100%;
+}
+
+.register-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container overriding absolute positioning tricks from login if not needed, we use flex here */
+.register-page .MuiFormControl-root {
+    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+.register-page .MuiFormLabel-root {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    font-family: 'Sora', sans-serif !important;
+    color: #1A2828 !important;
+    margin-bottom: 8px !important;
+    transform: none !important;
+    position: static !important;
+    display: block;
+}
+
+/* Remove default MUI label behavior */
+.register-page .MuiInputLabel-formControl {
+    pointer-events: auto !important;
+}
+
+/* Inputs */
+.register-page .MuiOutlinedInput-root {
+    width: 100% !important;
+    height: 63px !important;
+    background-color: #FFFFFF !important;
+    border-width: 1px !important;
+    border-radius: 2px !important;
+}
+
+.register-page .MuiOutlinedInput-notchedOutline {
+    border: 1px solid #E0E0E0 !important;
+    top: 0 !important;
+}
+
+.register-page .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+    border: 1px solid #142828 !important;
+    border-width: 1px !important;
+}
+
+/* Disable legend resizing from MUI */
+.register-page .MuiOutlinedInput-notchedOutline legend {
+    display: none !important;
+}
+
+/* Placeholder */
+.register-page .MuiInputBase-input {
+    padding: 0 16px !important;
+    font-size: 15px !important;
+    color: #333333 !important;
+}
+
+.register-page .MuiInputBase-input::placeholder {
+    color: #A0A0A0 !important;
+    opacity: 1 !important;
+    font-weight: 400 !important;
+}
+
+/* ─── Submit Button ─── */
+.register-submit-wrapper {
+    margin-top: 30px;
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+}
+
+.register-submit-btn {
+    width: 280px !important;
+    height: 52px !important;
+    background-color: #142828 !important;
+    color: #FFFFFF !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    font-family: 'Sora', sans-serif !important;
+    text-transform: none !important;
+    border-radius: 2px !important;
+    box-shadow: none !important;
+}
+
+.register-submit-btn:hover {
+    background-color: #0d1a1a !important;
+}
+
+/* ─── Divider ─── */
+.register-divider {
+    margin-top: 40px !important;
+    margin-bottom: 24px !important;
+    border-color: #D6D6D6 !important;
+    width: 100%;
+}
+
+/* ─── Bottom Links ─── */
+.register-bottom-bar {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+}
+
+.register-account-text {
+    color: #1A2828 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+}
+
+.register-login-link {
+    color: #FFA710 !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    margin-left: 6px !important;
+}
+
+@media (max-width: 1024px) {
+    .register-page {
+        width: 100% !important;
+    }
+}

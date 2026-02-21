@@ -1,6 +1,6 @@
 import type { FC, JSX } from "react";
 import type { SubmitHandler } from "react-hook-form";
-import { Box, Button, Typography, Grid } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import { FormProvider, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import InputController from "@components/controllers/InputController";
@@ -9,15 +9,7 @@ import { registerFormInitialValues } from "@constants/formInitials";
 import { useAuthContext } from "@contexts/Auth/hook";
 import { setToken } from "@lib/helper";
 import { registerValidationSchema } from "@validations/index";
-
-import {
-  formFieldInputSx,
-  loginButtonSx,
-  submitButtonWrapperSx,
-  headerSx,
-  subHeaderSx,
-  registerCaptionSx,
-} from "@styles/pages/auth/register";
+import "@styles/pages/auth/register/register.css";
 
 const RegisterForm: FC = (): JSX.Element => {
   const { setIsLoggedIn } = useAuthContext();
@@ -36,77 +28,71 @@ const RegisterForm: FC = (): JSX.Element => {
 
   return (
     <Box>
-      <Typography sx={registerCaptionSx}>REGISTER</Typography>
-      <Typography variant="h3" sx={headerSx}>
-        Sign Up
-      </Typography>
-      <Typography sx={subHeaderSx}>
+      <Typography className="register-welcome-caption">REGISTER</Typography>
+      <Typography className="register-title">Sign Up</Typography>
+      <Typography className="register-subtitle">
         Get a 7 day free trial | No credit card required.
       </Typography>
 
       <FormProvider {...methods}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <Grid container spacing={2.5}>
+          <Box className="register-fields-wrapper">
             {/* Row 1 - First Name & Last Name */}
-            <Grid size={{ xs: 12, sm: 6 }}>
-              <InputController
-                isRequired
-                name="firstName"
-                title="First Name"
-                placeholder="Enter Name"
-                inputSx={formFieldInputSx}
-              />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6 }}>
-              <InputController
-                isRequired
-                name="lastName"
-                title="Last Name"
-                placeholder="Enter Name"
-                inputSx={formFieldInputSx}
-              />
-            </Grid>
+            <Box className="register-row">
+              <Box className="register-col">
+                <InputController
+                  name="firstName"
+                  title="First Name"
+                  placeholder="Enter Name"
+                />
+              </Box>
+              <Box className="register-col">
+                <InputController
+                  name="lastName"
+                  title="Last Name"
+                  placeholder="Enter Name"
+                />
+              </Box>
+            </Box>
 
             {/* Row 2 - Email only */}
-            <Grid size={{ xs: 12 }}>
-              <InputController
-                isRequired
-                name="email"
-                title="Email"
-                fieldType="email"
-                placeholder="Enter Email"
-                inputSx={formFieldInputSx}
-              />
-            </Grid>
+            <Box className="register-row">
+              <Box className="register-col">
+                <InputController
+                  name="email"
+                  title="Email"
+                  fieldType="email"
+                  placeholder="Enter Email"
+                />
+              </Box>
+            </Box>
 
             {/* Row 3 - Company Name & EFIN */}
-            <Grid size={{ xs: 12, sm: 6 }}>
-              <InputController
-                isRequired
-                name="companyName"
-                title="Company Name"
-                placeholder="Enter Company Name"
-                inputSx={formFieldInputSx}
-              />
-            </Grid>
-            <Grid size={{ xs: 12, sm: 6 }}>
-              <InputController
-                isRequired
-                name="efin"
-                title="EFIN"
-                fieldType="number"
-                placeholder="Enter EFIN"
-                inputSx={formFieldInputSx}
-              />
-            </Grid>
-          </Grid>
+            <Box className="register-row">
+              <Box className="register-col">
+                <InputController
+                  name="companyName"
+                  title="Company Name"
+                  placeholder="Enter Company Name"
+                />
+              </Box>
+              <Box className="register-col">
+                <InputController
+                  name="efin"
+                  title="EFIN"
+                  fieldType="number"
+                  placeholder="Enter EFIN"
+                />
+              </Box>
+            </Box>
+          </Box>
 
-          <Box sx={submitButtonWrapperSx}>
+          <Box className="register-submit-wrapper">
             <Button
               variant="contained"
               type="submit"
               disableElevation
-              sx={loginButtonSx}
+              className="register-submit-btn"
             >
               Register
             </Button>

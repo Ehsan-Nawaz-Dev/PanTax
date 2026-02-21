@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { useState } from "react";
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
 import {
   AppBar,
   Box,
@@ -40,8 +40,14 @@ const NAV_LINKS = [
 
 const Header: FC = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
+
+  // Check if we are on the register page to change the auth button text
+  const isRegisterPage = location.pathname.includes("register");
+  const headerButtonText = isRegisterPage ? "Log In" : "Sign Up";
+  const headerButtonLink = isRegisterPage ? APP_ROUTES.LOGIN : APP_ROUTES.REGISTER;
 
   const navContent = (
     <Box component="nav" sx={navSx}>
@@ -73,12 +79,12 @@ const Header: FC = () => {
           <Box sx={actionsSx}>
             <Button
               component={Link}
-              to={APP_ROUTES.REGISTER}
+              to={headerButtonLink}
               variant="outlined"
               size="medium"
               sx={signUpButtonSx}
             >
-              Sign Up
+              {headerButtonText}
             </Button>
             <IconButton
               aria-label="open menu"
@@ -114,10 +120,10 @@ const Header: FC = () => {
           <ListItem disablePadding>
             <ListItemButton
               component={Link}
-              to={APP_ROUTES.REGISTER}
+              to={headerButtonLink}
               onClick={handleDrawerToggle}
             >
-              <ListItemText primary="Sign Up" />
+              <ListItemText primary={headerButtonText} />
             </ListItemButton>
           </ListItem>
         </List>
