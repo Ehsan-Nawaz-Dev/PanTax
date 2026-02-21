@@ -265,8 +265,73 @@ body.register-active .MuiAppBar-root .MuiButton-outlined {
     margin-left: 6px !important;
 }
 
-@media (max-width: 1024px) {
+/* ─── Responsive Adjustments ─── */
+@media (max-width: 1550px) {
+
+    /* Header Fluidity */
+    body.register-active .MuiAppBar-root,
+    body.register-active .MuiToolbar-root {
+        width: 100% !important;
+    }
+
+    body.register-active .MuiToolbar-root {
+        display: flex !important;
+        justify-content: space-between !important;
+        padding: 0 40px !important;
+        box-sizing: border-box !important;
+    }
+
+    body.register-active .MuiToolbar-root nav {
+        position: static !important;
+        width: auto !important;
+        flex: 1 !important;
+    }
+
+    body.register-active .MuiAppBar-root .MuiButton-outlined {
+        position: static !important;
+    }
+
+    /* Main Container Fluidity */
     .register-page {
         width: 100% !important;
+        padding: 0 40px !important;
+        box-sizing: border-box !important;
+    }
+
+    .register-form-panel {
+        width: 100% !important;
+        max-width: 726px !important;
+        margin: 0 auto;
+        border-radius: 8px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    body.register-active .MuiToolbar-root nav {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    body.register-active .MuiToolbar-root {
+        padding: 0 20px !important;
+    }
+
+    .register-page {
+        padding: 0 20px !important;
+        margin: 20px auto !important;
+    }
+
+    .register-form-panel {
+        padding: 30px 20px !important;
+    }
+
+    .register-title {
+        font-size: 32px !important;
+    }
+
+    .register-row {
+        flex-direction: column !important;
+        gap: 20px !important;
     }
 }
