@@ -45,7 +45,7 @@ body.login-active .MuiToolbar-root nav p {
   font-size: 15px !important;
   font-weight: 500 !important;
   margin: 0 16px !important;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Sora', sans-serif !important;
   text-decoration: none !important;
 }
 
@@ -162,7 +162,8 @@ body.login-active .MuiAppBar-root .MuiButton-outlined {
 /* Labels */
 .login-page .MuiFormLabel-root {
   font-size: 15px !important;
-  font-weight: 600 !important;
+  font-weight: 400 !important;
+  font-family: 'Sora', sans-serif !important;
   color: #1A2828 !important;
   margin-bottom: 8px !important;
   transform: none !important;
@@ -229,6 +230,7 @@ body.login-active .MuiAppBar-root .MuiButton-outlined {
   color: #FFFFFF !important;
   font-size: 16px !important;
   font-weight: 500 !important;
+  font-family: 'Sora', sans-serif !important;
   text-transform: none !important;
   border-radius: 2px !important;
   box-shadow: none !important;
