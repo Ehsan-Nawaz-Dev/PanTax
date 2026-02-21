@@ -238,7 +238,8 @@ body.register-active .MuiAppBar-root .MuiButton-outlined {
 .register-divider {
     margin-top: 40px !important;
     margin-bottom: 24px !important;
-    border-color: #D6D6D6 !important;
+    border-color: #000000 !important;
+    opacity: 1 !important;
     width: 100%;
 }
 

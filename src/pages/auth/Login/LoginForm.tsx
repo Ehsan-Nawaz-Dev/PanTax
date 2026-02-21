@@ -46,7 +46,6 @@ const LoginForm: FC = (): JSX.Element => {
             placeholder="Enter Email"
           />
           <InputController
-            isPassword
             name="password"
             title={PASSWORD}
             fieldType="password"
