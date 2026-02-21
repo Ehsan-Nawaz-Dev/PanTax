@@ -1,8 +1,3 @@
-/* ============================================================
-   Login Page – Carbon Copy Exact Dimensions
-   ============================================================ */
-
-/* ─── Global Layout Fixes ─── */
 body.login-active {
   margin: 0;
   padding: 0;
@@ -17,7 +12,7 @@ body.login-active .MuiAppBar-root {
   width: 1472px !important;
   height: 66px !important;
   min-height: 66px !important;
-  background-color: #FFFFFF !important;
+  background: #FFFFFF !important;
   border-bottom: 2px solid #F0F0F0 !important;
   box-shadow: none !important;
   margin-top: 20px;
