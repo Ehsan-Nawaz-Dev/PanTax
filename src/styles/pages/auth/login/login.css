@@ -1,176 +1,281 @@
 /* ============================================================
-   Login Page – Scoped Overrides
-   All login-specific visual tweaks live here.
-   Wrap the Login page root in className="login-page"
+   Login Page – Carbon Copy Exact Dimensions
    ============================================================ */
 
-/* ─── Layout: remove parent padding so image sits flush ─── */
-.login-page {
-  margin: -8px;
-  /* Offsets the 8px padding from PublicLayout */
-  width: calc(100% + 16px) !important;
-  height: calc(100% + 16px) !important;
-  min-height: calc(100vh - 66px) !important;
-  display: flex !important;
+/* ─── Global Layout Fixes ─── */
+body.login-active {
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@media (max-width: 767px) {
-  .login-page {
-    flex-direction: column !important;
-  }
-}
-
-/* ─── Header tweaks (scoped via body.login-active) ─── */
+/* ─── Header ─── */
 body.login-active .MuiAppBar-root {
-  border-bottom: 1px solid #f0f0f0;
+  width: 1472px !important;
+  height: 66px !important;
+  min-height: 66px !important;
+  background-color: #FFFFFF !important;
+  border-bottom: 2px solid #F0F0F0 !important;
+  box-shadow: none !important;
+  margin-top: 20px;
+  position: relative !important;
 }
 
 body.login-active .MuiToolbar-root {
-  padding-left: 24px;
-  padding-right: 24px;
+  width: 1472px !important;
+  height: 66px !important;
+  min-height: 66px !important;
+  padding: 0 !important;
+  position: relative !important;
 }
 
-/* Nav link styling */
-body.login-active .MuiAppBar-root nav a,
-body.login-active .MuiAppBar-root nav p {
-  color: #333;
-  font-size: 0.9rem;
+/* Nav List */
+body.login-active .MuiToolbar-root nav {
+  position: absolute !important;
+  width: 857.51px !important;
+  height: 60px !important;
+  top: 3px !important;
+  left: 307.25px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-body.login-active .MuiAppBar-root nav a:hover,
-body.login-active .MuiAppBar-root nav p:hover {
-  color: #E8A317;
+body.login-active .MuiToolbar-root nav a,
+body.login-active .MuiToolbar-root nav p {
+  color: #4A4A4A !important;
+  font-size: 15px !important;
+  font-weight: 500 !important;
+  margin: 0 16px !important;
+  font-family: 'Sora', sans-serif;
+  text-decoration: none !important;
 }
 
-/* Sign Up button */
+body.login-active .MuiToolbar-root nav a:hover,
+body.login-active .MuiToolbar-root nav p:hover {
+  color: #142828 !important;
+}
+
+/* Sign Up button in header */
 body.login-active .MuiAppBar-root .MuiButton-outlined {
-  width: 130px;
-  min-height: 44px;
-  border: 1.5px solid #142828;
-  border-radius: 4px;
-  font-weight: 600;
-  font-size: 0.875rem;
-  text-transform: none;
+  position: absolute !important;
+  width: 145.15px !important;
+  height: 66px !important;
+  min-height: 66px !important;
+  left: 1296.86px !important;
+  top: 0 !important;
+  border: 1px solid #142828 !important;
+  border-radius: 2px !important;
+  color: #142828 !important;
+  font-weight: 500 !important;
+  font-size: 15px !important;
+  text-transform: none !important;
+  font-family: 'Sora', sans-serif;
 }
 
-/* ─── Form Panel ─── */
-.login-page .login-form-panel {
-  background-color: #f5f5f5;
-  overflow: hidden;
+/* ─── Main Content Container ─── */
+.login-page {
+  padding: 0 !important;
+  margin: 20px auto 0 auto !important;
+  /* Spacing below header */
+  width: 1472px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  font-family: 'Sora', sans-serif;
 }
 
-/* ─── Form Labels – bold black ─── */
-.login-page .MuiFormLabel-root {
+/* ─── Left Panel (Image) ─── */
+.login-left-panel {
+  width: 726px !important;
+  height: 733px !important;
+  background-color: #FFFFFF;
+  box-sizing: border-box;
+}
+
+.login-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* ensures whole image fills 726x733 */
+  display: block;
+}
+
+/* ─── Right Panel (Form) ─── */
+.login-right-panel {
+  width: 726px !important;
+  height: 733px !important;
+  background-color: #F4F5F5;
+  /* Exact light gray */
+  display: flex;
+  box-sizing: border-box;
+  position: relative !important;
+}
+
+.login-form-container {
+  width: 666px !important;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+  /* offset inner content from top visually */
+}
+
+/* ─── Typography ─── */
+.login-welcome-caption {
+  color: #FFA710 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 8px !important;
+}
+
+.login-title {
+  color: #1A2828 !important;
+  font-size: 44px !important;
   font-weight: 700 !important;
-  font-size: 0.875rem !important;
-  color: #1a1a1a !important;
-  margin-bottom: 6px;
+  margin-bottom: 8px !important;
+  line-height: 1.2 !important;
 }
 
-.login-page .MuiFormLabel-root.Mui-focused {
-  color: #1a1a1a !important;
+.login-subtitle {
+  color: #666666 !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  margin-bottom: 32px !important;
 }
 
-/* ─── Input Fields ─── */
+/* ─── Form Elements ─── */
+.login-fields-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+}
+
+/* Input Container per instructions */
+.login-page .MuiFormControl-root {
+  width: 666px !important;
+  height: 89px !important;
+  position: relative !important;
+}
+
+/* Labels */
+.login-page .MuiFormLabel-root {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  color: #1A2828 !important;
+  margin-bottom: 8px !important;
+  transform: none !important;
+  position: static !important;
+}
+
+/* Remove default MUI label behavior */
+.login-page .MuiInputLabel-formControl {
+  pointer-events: auto !important;
+}
+
+/* Inputs */
 .login-page .MuiOutlinedInput-root {
-  height: 50px;
-  border-radius: 4px;
-  background-color: #fff;
-  font-size: 0.875rem;
+  position: absolute !important;
+  width: 666px !important;
+  height: 63px !important;
+  top: 26px !important;
+  /* distance from top of 89px container to clear label */
+  border-width: 1px !important;
+  background-color: #FFFFFF !important;
+  border-radius: 2px !important;
 }
 
 .login-page .MuiOutlinedInput-notchedOutline {
-  border-color: #e0e0e0;
+  border: 1px solid #E0E0E0 !important;
+  top: 0 !important;
 }
 
-.login-page .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
-  border-color: #bbb;
+.login-page .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #142828 !important;
+  border-width: 1px !important;
+}
+
+/* Disable legend resizing from MUI */
+.login-page .MuiOutlinedInput-notchedOutline legend {
+  display: none !important;
+}
+
+/* Placeholder */
+.login-page .MuiInputBase-input {
+  padding: 0 16px !important;
+  font-size: 15px !important;
+  color: #333333 !important;
 }
 
 .login-page .MuiInputBase-input::placeholder {
-  color: #aaa;
-  opacity: 1;
-  font-size: 0.875rem;
+  color: #A0A0A0 !important;
+  opacity: 1 !important;
+  font-weight: 400 !important;
 }
 
-/* ─── Login Button ─── */
-.login-page .login-submit-btn {
-  width: 220px;
-  height: 50px;
-  text-transform: none;
-  font-size: 0.95rem;
-  font-weight: 600;
-  border-radius: 4px;
-  box-shadow: none;
-  background-color: #1B3A2D;
-  color: #fff;
+/* ─── Submit Button ─── */
+.login-submit-wrapper {
+  margin-top: 30px;
+  display: flex !important;
+  justify-content: center !important;
+  width: 100%;
 }
 
-.login-page .login-submit-btn:hover {
-  background-color: #142d23;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+.login-submit-btn {
+  width: 280px !important;
+  height: 52px !important;
+  background-color: #142828 !important;
+  color: #FFFFFF !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  border-radius: 2px !important;
+  box-shadow: none !important;
 }
 
-/* ─── Welcome Caption ─── */
-.login-page .login-welcome-caption {
-  color: #E8A317;
-  font-weight: 700;
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-/* ─── Title ─── */
-.login-page .login-title {
-  font-weight: 700;
-  color: #1a1a1a;
-  line-height: 1.15;
-  margin-bottom: 6px;
-}
-
-/* ─── Subtitle ─── */
-.login-page .login-subtitle {
-  color: #777;
-  font-size: 0.875rem;
-  font-weight: 400;
-  margin-bottom: 32px;
+.login-submit-btn:hover {
+  background-color: #0d1a1a !important;
 }
 
 /* ─── Divider ─── */
-.login-page .login-divider {
-  margin-top: 24px;
-  margin-bottom: 24px;
-  border-color: #e0e0e0;
+.login-divider {
+  margin-top: 40px !important;
+  margin-bottom: 24px !important;
+  border-color: #D6D6D6 !important;
+  width: 100%;
 }
 
 /* ─── Bottom Links ─── */
-.login-page .login-forgot-link {
-  color: #333;
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none;
+.login-bottom-bar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100%;
 }
 
-.login-page .login-forgot-link:hover {
-  text-decoration: underline;
-  color: #111;
+.login-forgot-link {
+  color: #1A2828 !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
 }
 
-.login-page .login-signup-link {
-  color: #E8A317;
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-decoration: none;
-  margin-left: 4px;
+.login-account-text {
+  color: #1A2828 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
 }
 
-.login-page .login-signup-link:hover {
-  text-decoration: underline;
-}
-
-.login-page .login-account-text {
-  color: #555;
-  font-size: 0.875rem;
-  font-weight: 400;
+.login-signup-link {
+  color: #FFA710 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  margin-left: 6px !important;
 }

@@ -8,14 +8,6 @@ import LoginForm from "./LoginForm";
 // assets
 import loginImage from "@assets/images/login.png";
 import { APP_ROUTES } from "@constants/index";
-// styles
-import {
-  loginMainSx,
-  imageWrapperSx,
-  imageSx,
-  formPanelSx,
-  formContentSx,
-} from "@styles/pages/auth/login";
 // CSS overrides for login page
 import "@styles/pages/auth/login/login.css";
 
@@ -30,18 +22,20 @@ const Login: FC = () => {
 
   return (
     <PublicLayout>
-      <Box component="main" sx={loginMainSx} className="login-page">
-        <Box sx={imageWrapperSx}>
+      <Box component="main" className="login-page">
+        {/* Left Side: Image with Padding */}
+        <Box className="login-left-panel">
           <Box
             component="img"
             src={loginImage}
             alt="Team collaboration"
-            sx={imageSx}
+            className="login-image"
           />
         </Box>
 
-        <Box sx={formPanelSx} className="login-form-panel">
-          <Box sx={formContentSx}>
+        {/* Right Side: Form Content */}
+        <Box className="login-right-panel">
+          <Box className="login-form-container">
             <Typography variant="caption" className="login-welcome-caption">
               WELCOME
             </Typography>
@@ -56,15 +50,7 @@ const Login: FC = () => {
 
             <Divider className="login-divider" />
 
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexWrap: "wrap",
-                gap: 1.5,
-              }}
-            >
+            <Box className="login-bottom-bar">
               <Typography
                 component={Link}
                 to={APP_ROUTES.FORGOT_PASSWORD}

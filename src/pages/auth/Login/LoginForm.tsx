@@ -12,11 +12,6 @@ import { EFIN, PASSWORD, EMAIL } from "@constants/constants";
 import { loginValidationSchema } from "@validations/index";
 import { useAuthContext } from "@contexts/Auth/hook";
 import { setToken } from "@lib/helper";
-// styles
-import {
-  fieldsWrapperSx,
-  submitButtonWrapperSx,
-} from "@styles/pages/auth/login";
 
 const LoginForm: FC = (): JSX.Element => {
   const { setIsLoggedIn } = useAuthContext();
@@ -37,23 +32,20 @@ const LoginForm: FC = (): JSX.Element => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <Box sx={fieldsWrapperSx}>
+        <Box className="login-fields-wrapper">
           <InputController
-            isRequired
             name="efin"
             title={EFIN}
             fieldType="number"
             placeholder="Enter EFIN"
           />
           <InputController
-            isRequired
             name="email"
             title={EMAIL}
             fieldType="email"
             placeholder="Enter Email"
           />
           <InputController
-            isRequired
             isPassword
             name="password"
             title={PASSWORD}
@@ -61,7 +53,7 @@ const LoginForm: FC = (): JSX.Element => {
             placeholder="Enter Password"
           />
         </Box>
-        <Box sx={submitButtonWrapperSx}>
+        <Box className="login-submit-wrapper">
           <Button
             variant="contained"
             color="primary"
